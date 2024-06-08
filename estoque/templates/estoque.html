@@ -15,14 +15,7 @@
         <form action="" method="POST"> {% csrf_token %}
             <div class="input-group mb-3">
                 <button type="button" class="btn btn-secondary">PRODUTO</button>
-                <div class="input-group-prepend">
-                    <select name="unit" class="form-select" aria-label="Default select example">
-                        <option value="UN" selected>UN</option>
-                        <option value="1">CX 6</option>
-                        <option value="2">KG 8.5</option>
-                        <option value="3">KG 9.9</option>
-                    </select>
-                </div>
+              
                 <input type="text" name="description" class="form-control" placeholder="{{descricaoCompleta}}" aria-label="Username" aria-describedby="basic-addon1">
                 <button type="submit">Enviar</button>
             </div>
@@ -39,13 +32,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr> 
+                        
                         <td>MATRIZ</td>
                         <td>{{precoVenda1}}</td>
                         <td>{{estq1}}</td>
                         <td>{{pedido1}}</td>
                         <td>{{estq1}}</td>
-                        <td>20/05/24</td>
+                        <td><img src="{{ultimoCGO1}}"> {{ultimaCompraMov1}}</td>
+                        
                     </tr>
                     <tr>
                         <td>BRAVA</td>
@@ -53,7 +48,7 @@
                         <td>{{estq3}}</td>
                         <td>{{pedido3}}</td>
                         <td>{{estq3}}</td>
-                        <td>17/05/24</td>
+                        <td><img src="{{ultimoCGO3}}"> {{ultimaCompraMov3}}</td>
                     </tr>
                     <tr>
                         <td>MALL</td>
@@ -61,7 +56,7 @@
                         <td>{{estq4}}</td>
                         <td>{{pedido4}}</td>
                         <td>{{estq4}}</td>
-                        <td>05/05/24</td>
+                        <td><img src="{{ultimoCGO4}}"> {{ultimaCompraMov4}}</td>
                     </tr>
                     <tr>
                         <td>CENTRO</td>
@@ -69,7 +64,7 @@
                         <td>{{estq5}}</td>
                         <td>{{pedido5}}</td>
                         <td>{{estq5}}</td>
-                        <td>20/05/24</td>
+                        <td><img src="{{ultimoCGO5}}"> {{ultimaCompraMov5}}</td>
                     </tr>
                     <tr>
                         <td>CD</td>
@@ -77,7 +72,7 @@
                         <td>{{estq99}}</td>
                         <td>{{pedido99}}</td>
                         <td>{{estq99}}</td>
-                        <td>20/05/24</td>
+                        <td><img src="{{ultimoCGO99}}"> {{ultimaCompraMov99}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -91,8 +86,8 @@
     </body>
 </html>
 
-{% if response %}
-<div class="alert alert-success" role="alert">
-    {{ response }}
+{% if responseErro %}
+<div class="alert alert-danger" role="alert">
+    {{ responseErro }}
 </div>
 {% endif %}
