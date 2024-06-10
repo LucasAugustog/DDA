@@ -286,6 +286,29 @@ def estoque(request):
                 precoVenda99 = p['PrecoVenda']
 
 
+
+    
+    urlMediaVenda = ("http://129.151.33.48:8343/SMProdutosAPI/api/v4/produtos/venda-media-produtos?IdProduto=" + codigoProduto + "&_pageSize=999")
+    responseMediaVenda = requests.request("GET", urlMediaVenda, headers=headers)
+    mediaVenda = responseMediaVenda.json()
+
+    for mv in mediaVenda:
+        if(mv['NumeroEmpresa'] == 1):
+            mediaVenda1 = mv['MediaForaPromocao']
+            mediaVenda1 = str(mediaVenda1)[:4]
+        if(mv['NumeroEmpresa'] == 3):
+            mediaVenda3 = mv['MediaForaPromocao']
+            mediaVenda3 = str(mediaVenda3)[:4]
+        if(mv['NumeroEmpresa'] == 4):
+            mediaVenda4 = mv['MediaForaPromocao']
+            mediaVenda4 = str(mediaVenda4)[:4]
+        if(mv['NumeroEmpresa'] == 5):
+            mediaVenda5 = mv['MediaForaPromocao']
+            mediaVenda5 = str(mediaVenda5)[:4]
+        if(mv['NumeroEmpresa'] == 99):
+            mediaVenda99 = mv['MediaForaPromocao']
+            mediaVenda99 = str(mediaVenda99)[:4]
+
     urlUltimaEntrada = ("http://129.151.33.48:8343/SMProdutosAPI/api/v4/produtos/ultima-entrada-produtos?idProduto=" + codigoProduto + "&_pageSize=999")
     responseUrlUltimaEntrada = requests.request("GET", urlUltimaEntrada, headers=headers)
     ultimaCompra = responseUrlUltimaEntrada.json()
@@ -431,4 +454,9 @@ def estoque(request):
         'precoVenda5': precoVenda5,
         'promo99': promo99,
         'precoVenda99': precoVenda99,
+        'mediaVenda1': mediaVenda1,
+        'mediaVenda3': mediaVenda3,
+        'mediaVenda4': mediaVenda4,
+        'mediaVenda5': mediaVenda5,
+        'mediaVenda99': mediaVenda99,
         })
