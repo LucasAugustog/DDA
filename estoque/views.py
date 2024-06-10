@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import requests
 from datetime import datetime
-import schedule
 import time
 from django.shortcuts import render
 
