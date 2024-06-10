@@ -66,12 +66,8 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'balancas',
-        'USER': 'jKAbrGtHWGWt9',
-        'PASSWORD': 'EEojCNHdW2BGR',
-        'HOST': 'desenvolvimento-interno.cbcctcprk1pr.us-east-2.rds.amazonaws.com',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
     }
 }
 
