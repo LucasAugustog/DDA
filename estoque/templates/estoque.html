@@ -23,9 +23,7 @@
             text-align: left;
         }
         
-        th {
-            background-color: red;
-        }
+
         
         .form-inline .form-group {
             margin: 0;
@@ -34,10 +32,8 @@
     </style>
     <body>        
         <form action="" method="POST"> {% csrf_token %}
-            <div class="input-group mb-3">
-                <button type="button" class="btn btn-secondary">PRODUTO</button>
-              
-                <input type="text" name="description" class="form-control" placeholder="{{descricaoCompleta}}" aria-label="Username" aria-describedby="basic-addon1">
+            <div class="input-group mb-3">              
+                <input type="text" name="description" placeholder="{{descricaoCompleta}}" aria-label="Username" aria-describedby="basic-addon1">
                 <button type="submit">Enviar</button>
             </div>
         </form>
@@ -46,15 +42,15 @@
                     <tr>
                         <th>LOJA</th>
                         <th>ESTQ</th>
-                        <th>PEDIDO</th>
-                        <th>MED_VENDA</th>
+                        <th>PEDI</th>
+                        <th>MED_VND</th>
                         <th>ULT.ENT</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr> 
                         
-                        <td>MATRIZ</td>
+                        <td>MTZ</td>
                         <td>{{estq1}}</td>
                         <td>{{pedido1}}</td>
                         <td>{{mediaVenda1}}</td>
@@ -62,21 +58,21 @@
                         
                     </tr>
                     <tr>
-                        <td>BRAVA</td>
+                        <td>BRV</td>
                         <td>{{estq3}}</td>
                         <td>{{pedido3}}</td>
                         <td>{{mediaVenda3}}</td>
                         <td><img src="{{ultimoCGO3}}"> {{ultimaCompraMov3}}</td>
                     </tr>
                     <tr>
-                        <td>MALL</td>
+                        <td>MAL</td>
                         <td>{{estq4}}</td>
                         <td>{{pedido4}}</td>
                         <td>{{mediaVenda4}}</td>
                         <td><img src="{{ultimoCGO4}}"> {{ultimaCompraMov4}}</td>
                     </tr>
                     <tr>
-                        <td>CENTRO</td>
+                        <td>CTR</td>
                         <td>{{estq5}}</td>
                         <td>{{pedido5}}</td>
                         <td>{{mediaVenda5}}</td>
