@@ -111,10 +111,6 @@ def estoque(request):
 
     else:
         codigoScaneado = description
-        
-
-    
-
 
    
     urlCodigoAcesso = ("http://129.151.33.48:8343/SMProdutosAPI/api/v4/produtos/codigos-acesso-prod?CodigoAcesso=" +  codigoScaneado + "&_pageSize=999")
