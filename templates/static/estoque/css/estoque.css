@@ -9,10 +9,6 @@ th, td {
     text-align: left;
 }
 
-th {
-    background-color: red;
-}
-
 .form-inline .form-group {
     margin: 0;
   }
